@@ -1,16 +1,19 @@
-# exchange_rates_challenge
+# Exchange Rates
 
-A new Flutter project.
+This is a project made as a test challenge for ST
 
-## Getting Started
+# Getting Started
+- `make configure`
+- `flutter run`
 
-This project is a starting point for a Flutter application.
+## Development
 
-A few resources to get you started if this is your first Flutter project:
+Since this project uses packages for code generation, build_runner should be executed. To simplify
+this process, `make` provides a short way to call `flutter pub run build_runner build`
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- `make build` - run code generator once
+- `make watch` - run code generator and watch for changes
+- `make test` - run tests
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Author
+Maxim Kalistratov (@gasaichan)

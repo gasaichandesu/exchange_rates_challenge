@@ -2,5 +2,9 @@
     "appTitle": "Exchange Rates",
     "@appTitle": {
         "description": "Application title"
+    },
+    "serverError": "Server Error",
+    "@serverError": {
+        "description": "Explanation of a server error"
     }
 }
