@@ -4,6 +4,7 @@ This is a project made as a test challenge for ST
 
 # Getting Started
 - `make configure`
+- `flutter pub get`
 - `flutter run`
 
 ## Development
