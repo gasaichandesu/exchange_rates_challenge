@@ -39,7 +39,7 @@ class SettingsViewModel extends ViewModel {
 
   Future<void> onSave() async {
     _sharedPreferences.setString(
-        ViewModel.RATES_PREFS_KEY,
+        ViewModel.ratesPrefsKey,
         jsonEncode(_rates
             .asMap()
             .map((index, rate) => MapEntry(index, rate.copyWith(order: index)))
