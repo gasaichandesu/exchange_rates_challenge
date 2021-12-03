@@ -13,6 +13,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ViewRate _$ViewRateFromJson(Map<String, dynamic> json) {
+  return _ViewRate.fromJson(json);
+}
+
 /// @nodoc
 class _$ViewRateTearOff {
   const _$ViewRateTearOff();
@@ -24,6 +28,7 @@ class _$ViewRateTearOff {
       required int scale,
       required double todayRate,
       required double tomorrowRate,
+      required bool isEnabled,
       int? order}) {
     return _ViewRate(
       id: id,
@@ -32,8 +37,13 @@ class _$ViewRateTearOff {
       scale: scale,
       todayRate: todayRate,
       tomorrowRate: tomorrowRate,
+      isEnabled: isEnabled,
       order: order,
     );
+  }
+
+  ViewRate fromJson(Map<String, Object?> json) {
+    return ViewRate.fromJson(json);
   }
 }
 
@@ -48,8 +58,10 @@ mixin _$ViewRate {
   int get scale => throw _privateConstructorUsedError;
   double get todayRate => throw _privateConstructorUsedError;
   double get tomorrowRate => throw _privateConstructorUsedError;
+  bool get isEnabled => throw _privateConstructorUsedError;
   int? get order => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ViewRateCopyWith<ViewRate> get copyWith =>
       throw _privateConstructorUsedError;
@@ -66,6 +78,7 @@ abstract class $ViewRateCopyWith<$Res> {
       int scale,
       double todayRate,
       double tomorrowRate,
+      bool isEnabled,
       int? order});
 }
 
@@ -85,6 +98,7 @@ class _$ViewRateCopyWithImpl<$Res> implements $ViewRateCopyWith<$Res> {
     Object? scale = freezed,
     Object? todayRate = freezed,
     Object? tomorrowRate = freezed,
+    Object? isEnabled = freezed,
     Object? order = freezed,
   }) {
     return _then(_value.copyWith(
@@ -112,6 +126,10 @@ class _$ViewRateCopyWithImpl<$Res> implements $ViewRateCopyWith<$Res> {
           ? _value.tomorrowRate
           : tomorrowRate // ignore: cast_nullable_to_non_nullable
               as double,
+      isEnabled: isEnabled == freezed
+          ? _value.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
@@ -132,6 +150,7 @@ abstract class _$ViewRateCopyWith<$Res> implements $ViewRateCopyWith<$Res> {
       int scale,
       double todayRate,
       double tomorrowRate,
+      bool isEnabled,
       int? order});
 }
 
@@ -152,6 +171,7 @@ class __$ViewRateCopyWithImpl<$Res> extends _$ViewRateCopyWithImpl<$Res>
     Object? scale = freezed,
     Object? todayRate = freezed,
     Object? tomorrowRate = freezed,
+    Object? isEnabled = freezed,
     Object? order = freezed,
   }) {
     return _then(_ViewRate(
@@ -179,6 +199,10 @@ class __$ViewRateCopyWithImpl<$Res> extends _$ViewRateCopyWithImpl<$Res>
           ? _value.tomorrowRate
           : tomorrowRate // ignore: cast_nullable_to_non_nullable
               as double,
+      isEnabled: isEnabled == freezed
+          ? _value.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
       order: order == freezed
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
@@ -188,7 +212,7 @@ class __$ViewRateCopyWithImpl<$Res> extends _$ViewRateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_ViewRate implements _ViewRate {
   _$_ViewRate(
       {required this.id,
@@ -197,7 +221,11 @@ class _$_ViewRate implements _ViewRate {
       required this.scale,
       required this.todayRate,
       required this.tomorrowRate,
+      required this.isEnabled,
       this.order});
+
+  factory _$_ViewRate.fromJson(Map<String, dynamic> json) =>
+      _$$_ViewRateFromJson(json);
 
   @override
   final int id;
@@ -212,11 +240,13 @@ class _$_ViewRate implements _ViewRate {
   @override
   final double tomorrowRate;
   @override
+  final bool isEnabled;
+  @override
   final int? order;
 
   @override
   String toString() {
-    return 'ViewRate(id: $id, abbreviation: $abbreviation, name: $name, scale: $scale, todayRate: $todayRate, tomorrowRate: $tomorrowRate, order: $order)';
+    return 'ViewRate(id: $id, abbreviation: $abbreviation, name: $name, scale: $scale, todayRate: $todayRate, tomorrowRate: $tomorrowRate, isEnabled: $isEnabled, order: $order)';
   }
 
   @override
@@ -233,17 +263,24 @@ class _$_ViewRate implements _ViewRate {
                 other.todayRate == todayRate) &&
             (identical(other.tomorrowRate, tomorrowRate) ||
                 other.tomorrowRate == tomorrowRate) &&
+            (identical(other.isEnabled, isEnabled) ||
+                other.isEnabled == isEnabled) &&
             (identical(other.order, order) || other.order == order));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, id, abbreviation, name, scale,
-      todayRate, tomorrowRate, order);
+      todayRate, tomorrowRate, isEnabled, order);
 
   @JsonKey(ignore: true)
   @override
   _$ViewRateCopyWith<_ViewRate> get copyWith =>
       __$ViewRateCopyWithImpl<_ViewRate>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ViewRateToJson(this);
+  }
 }
 
 abstract class _ViewRate implements ViewRate {
@@ -254,7 +291,10 @@ abstract class _ViewRate implements ViewRate {
       required int scale,
       required double todayRate,
       required double tomorrowRate,
+      required bool isEnabled,
       int? order}) = _$_ViewRate;
+
+  factory _ViewRate.fromJson(Map<String, dynamic> json) = _$_ViewRate.fromJson;
 
   @override
   int get id;
@@ -268,6 +308,8 @@ abstract class _ViewRate implements ViewRate {
   double get todayRate;
   @override
   double get tomorrowRate;
+  @override
+  bool get isEnabled;
   @override
   int? get order;
   @override

@@ -10,4 +10,4 @@ final locator = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: false, // default
 )
-void configureDependencies() => $initGetIt(locator);
+Future<void> configureDependencies() => $initGetIt(locator);

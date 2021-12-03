@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -14,9 +15,14 @@ void main() {
   group('currency repository test', () {
     test('should return array of currencies', () async {
       dioAdapter.onGet(
-          '',
-          (server) => server.reply(
-              200, File('test/unit/currency_fixture.json').readAsStringSync()));
+        '',
+        (server) => server.reply(
+          200,
+          jsonDecode(
+            File('test/unit/currency_fixture.json').readAsStringSync(),
+          ),
+        ),
+      );
 
       final currencyRepository = NBRBCurrencyRepository(dio);
 
