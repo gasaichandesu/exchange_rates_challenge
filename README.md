@@ -1,5 +1,8 @@
 # Exchange Rates
 
+![Screenshot 1](https://github.com/gasaichandesu/exchange_rates_challenge/blob/master/.screenshots/screenshot_1.png)
+![Screenshot 2](https://github.com/gasaichandesu/exchange_rates_challenge/blob/master/.screenshots/screenshot_2.png)
+
 This is a project made as a test challenge for ST
 
 # Getting Started
